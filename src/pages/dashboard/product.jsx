@@ -45,7 +45,7 @@ export function Product() {
     try {
       const jwtToken = await getToken();
       const EmployeeId = await getEmployeeId();
-      const url = 'https://b97c-36-71-84-137.ngrok-free.app/Gateway/api/Product/GetAll';
+      const url = `${import.meta.env.VITE_API_BASE_URL}/Gateway/api/Product/GetAll`;
 
       const headers = {
         'Authorization': `Bearer ${jwtToken}`,
@@ -96,7 +96,7 @@ export function Product() {
     if (selectedProduct) {
       try {
         const jwtToken = await getToken();
-        const url = `https://b97c-36-71-84-137.ngrok-free.app/Gateway/api/Product/Delete/`;
+        const url = "https://dacd-36-71-83-123.ngrok-free.app/Gateway/api/Product/Delete/";
 
         const body = {
           id: selectedProduct.inventoryId

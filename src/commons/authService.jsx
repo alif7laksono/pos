@@ -1,5 +1,5 @@
 import { jwtVerify } from 'jose';
-import Cookies from "js-cookie";
+import Cookies from 'js-cookie';
 import axios from 'axios';
 
 const secretKey = '47fab19090a41d7efc69cb542f31a47558f547808dd59fbef6468aa3e22127cd';
@@ -9,7 +9,7 @@ export async function login(formData) {
   const username = formData.get('username');
   const password = formData.get('password');
   try {
-    const url = "https://b97c-36-71-84-137.ngrok-free.app/Gateway/api/login";
+    const url = `${import.meta.env.VITE_API_BASE_URL}/Gateway/api/login`;
     const data = {
       "username": username,
       "location": "ok",
@@ -33,6 +33,7 @@ export async function login(formData) {
     console.error(error);
   }
 }
+
 
 
 export async function refreshToken() {

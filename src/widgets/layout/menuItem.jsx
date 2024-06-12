@@ -46,7 +46,7 @@ const MenuItems = ({ sidenavType, sidenavColor }) => {
         const jwtToken = await getToken();
         const EmployeeId = await getEmployeeId();
 
-        const url = 'https://b97c-36-71-84-137.ngrok-free.app/Gateway/api/menu/tree';
+        const url = `${import.meta.env.VITE_API_BASE_URL}/Gateway/api/menu/tree`;
 
         const headers = {
           'Authorization': `Bearer ${jwtToken}`,
